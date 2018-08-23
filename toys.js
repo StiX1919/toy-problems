@@ -32,12 +32,15 @@ function fibonacci(number) {
     let fibArr = []
 
     for(let i = 0; i < number; i++){
-        if(!fibArr[0] || !fibArr[1]){
-            fibArr.push(1)
-        } else fibArr.push(fibArr[i-2] + fibArr[i-1])
+        fibArr.push((fibArr[i-2] || 1) + (fibArr[i-1] || 0))
     }
     return fibArr.reverse()
 }
+//recursion example
+function fibRecur(num, arr) {
+    if(num <= 1) return 1
 
+    return fibRecur(num - 1) + fibRecur(num - 2)
+}
 
 

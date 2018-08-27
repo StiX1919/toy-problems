@@ -44,4 +44,21 @@ function fibRecur(num, arr) {
 }
 
 
-// next problem
+// Write a function, which takes a non-negative integer (seconds) 
+//as input and returns the time in a human-readable format (HH:MM:SS)
+
+function readableTime(sec, cb) {
+    let hours = cb(Math.floor(sec/3600)),
+        minutes = cb(Math.floor((sec%3600)/60)),
+        seconds = cb(sec-(hours*3600)-(minutes*60))
+  
+    return `${hours}:${minutes}:${seconds}`
+  
+  }
+  
+  function twoDig(time) {
+    if(('' + time).length < 2) {
+      return '0' + time
+    }
+    return time
+  }

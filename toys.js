@@ -62,3 +62,20 @@ function readableTime(sec, cb) {
     }
     return time
   }
+
+  //Paper folding
+  //  a piece of paper with a thickness of .0001m, given a distance of m, how 
+  //many folds will it take to reach said distance?
+
+  function folding(dis) {
+      let paper = 0.0001
+      let folds = 0
+      if(dis <= 0){
+          return null;
+      }
+      else while(paper <= dist){
+          paper *= 2
+          folds++
+      }
+      return folds
+  }

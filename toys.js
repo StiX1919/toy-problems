@@ -79,3 +79,15 @@ function readableTime(sec, cb) {
       }
       return folds
   }
+
+  //Write a function that takes in a string and returns that
+  //string but in leet speak. Only capital letters will be passed
+  function toLeetSpeak(str) {
+    let leet = { A : '@', B : '8', C : '(', E : '3',  G : '6', H : '#', I : '!', L : '1', O : '0', S : '$', T : '7', Z : '2' }
+  
+    let land = str.split('').map(item => {
+      return leet[item] ? leet[item] : item;
+    }).join('')
+  
+    return land
+  }

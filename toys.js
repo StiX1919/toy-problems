@@ -92,4 +92,13 @@ function readableTime(sec, cb) {
     return land
   }
 
-  // next
+  // Next Perfect Square
+    // write a function that finds the next integral perfect square. 
+    //if the paramater passed is not a square than -1 should be returned
+
+    function perfectSquare(num) {
+        if(!Math.sqrt(num) % 1 === 0){
+            return (Math.pow((Math.sqrt(num) + 1), 2))
+        }
+        else return -1
+    }

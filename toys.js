@@ -102,3 +102,29 @@ function readableTime(sec, cb) {
         }
         else return -1
     }
+
+// Valid Parenthesis
+    // Write a function called validParentheses that takes a string of parentheses, 
+    //and determines if the order of the parentheses is valid. validParentheses 
+    //should return true if the string is valid, and false if it's invalid.
+
+    function paran(str) {
+        let count = 0
+        let splStr = str.split('')
+      
+        for(let i = 0; i < splStr.length; i++){
+          if(count < 0){
+            return false
+          }
+          if(splStr[i] === '('){
+            count ++
+          }
+          else if(splStr[i] === ')'){
+            count --
+          }
+        }
+        if(count === 0){
+          return true
+        }
+        else return false
+      }

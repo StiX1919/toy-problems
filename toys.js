@@ -137,4 +137,25 @@ function readableTime(sec, cb) {
     // re-invested yearly after paying tax 'T'
     // Note that the principal is not taxed but only the year's accrued interest
 
-    
+    function calculateYears(principal, interest, tax, desired) {
+        let p = principal
+        let int = interest
+        let t = tax
+        let d = desired
+        if(d <= p){
+          return 0
+        }
+        
+        let years = 0
+        
+        for( let i = 0; i < desired; i++) {
+          let bonus = p * int 
+            bonus -= (bonus * t)
+            
+          p += bonus
+          years ++
+          if(p >= d) {
+            return years
+          }
+        }
+    }

@@ -175,3 +175,29 @@ function GetSum( a,b ) {
     }
     return total
   }
+
+  //Complete the function scramble(str1, str2) that returns true if a portion 
+    //of str1 characters can be rearranged to match str2, otherwise returns false.
+
+  function findWord(str1, str2) {
+    let sampleStr = str2.split('')
+    let goal = str2.length
+  
+    let testStr = str1.split('')
+    let count = 0
+  
+    for(let i = 0; i < testStr.length; i++){
+      if(sampleStr.length === 0){
+        return true
+      }
+      if(sampleStr.includes(testStr[i])){
+        let index = sampleStr.indexOf(testStr[i])
+        sampleStr.splice(index, 1)
+        count ++
+      }
+    }
+    if(goal === count){
+      return true
+    }
+    return false
+  }
